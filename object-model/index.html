@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://yui.yahooapis.com/pure/0.1.0/pure-min.css' rel='stylesheet' />
+    <link href='http://purecss.io/combo/1.0.2?/css/main.css&amp;/css/rainbow/baby-blue.css' rel='stylesheet' />
+    <script src='http://code.jquery.com/jquery-1.10.0.min.js' type='text/javascript'></script>
+    <script src='http://cdn.craig.is/js/rainbow/rainbow.min.js' type='text/javascript'></script>
+    <script src='http://cdn.craig.is/js/rainbow/language/css.js' type='text/javascript'></script>
+    <script src='http://cdn.craig.is/js/rainbow/language/generic.js' type='text/javascript'></script>
+    <script src='http://cdn.craig.is/js/rainbow/language/javascript.js' type='text/javascript'></script>
+    <script src='question.js' type='text/javascript'></script>
+    <script src='main.js' type='text/javascript'></script>
+    <style type='text/css'>
+      /*<![CDATA[*/
+        table { margin:0 auto; text-align: center; margin-bottom: 40px;}
+        .header { width:100%; }
+        .hide {
+        display:none;
+        }
+        .start, .answering, .result {
+        text-align: center;
+        width: 100%; 
+        }
+        .pure-button-success {
+        background: rgb(76, 201, 71); /* this is a green */
+        }
+        .pure-button-error {
+        background: rgb(202, 60, 60); /* this is a maroon */
+        }
+        .pure-button {
+        border-radius: 6px;
+        color:white;
+        font-weight:bolder;
+        }
+        .answer {
+        text-align: center;
+        margin:0 auto;
+        }
+        .blue {
+        color: rgb(95, 198, 218);
+        }
+        .red {
+        color:red;
+        }
+        .green {
+        color:green;
+        }
+        .congratuation {
+        font: bolder 20px;
+        }
+      /*]]>*/
+    </style>
+  </head>
+  <body>
+    <div class='pure-g-r'>
+      <div class='pure-u header'>
+        <h1 class='pure-u-1'>Do you know Javascript Object Model?</h1>
+        <h2 class='pure-u'></h2>
+      </div>
+      <div class='pure-u start hide'>
+        <h3 class='pure-u-1'>接下来是一系列等式，只需要根据判断选择true或者false既可</h3>
+        <p class='pure-u-1'>靠直觉！ 如果邪恶的打开了console....</p>
+        <div class='pure-u-1' style='text-align:center'>
+          <a class='pure-button' id='start-btn' style='color:#000'>点我点我开始</a>
+        </div>
+      </div>
+      <div class='pure-u answering hide'>
+        <pre class='pure-u-1'><code data-language='javascript' id='q-pre'>var a = {};</code></pre>
+        <h2 class='pure-u-1'>请回答以下等式的值</h2>
+        <h3 class='question pure-u-1' id='q-qe'>Function.prototype === Object.prototype</h3>
+        <h2 class='pure-u-1'>请答题:</h2>
+        <div class='pure-u-1 answer'>
+          <a class='pure-button pure-button-success' id='true-btn'>TRUE</a>
+          <a class='pure-button pure-button-error' id='false-btn'>FALSE</a>
+        </div>
+      </div>
+      <div class='pure-u result hide'>
+        <h2 class='pure-u-1'>最后结果是:</h2>
+        <div class='pure-u-1' id='result-txt'>
+          ( 14 / 20 ) 答对 14 题
+        </div>
+        <h3 class='pure-u-1 cong red hide'>恭喜恭喜， 全部正确</h3>
+        <h3 class='pure-u-1' height='20px'></h3>
+        <div class='pure-u-1'>
+          <table class='pure-table' id='rs-table'>
+            <tr>
+              <th>题目</th>
+              <th>你的答案</th>
+              <th>正确答案</th>
+              <th>备注</th>
+            </tr>
+            <tr>
+              <th class='blue'>Fucntion.prototype === Object.prototype</th>
+              <th class='red'>false</th>
+              <th class='green'>true</th>
+              <th></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
