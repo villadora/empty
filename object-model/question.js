@@ -1,4 +1,4 @@
-var questions = [
+var pool = [
     {
         qe:"Function instanceof Object",
         why:"一切皆是对象"
@@ -58,10 +58,21 @@ var questions = [
 ];
 
 
-for(var i = questions.length; i-- > 0; ) {
-    var q = questions[i];
+
+var questions = [];
+
+for(var i = pool.length; i-- > 0; ) {
+    var q = pool[i];
     var run = "(function() {";
     if("pre" in q) run += q.pre;
     run += "return ("+q.qe+");})()";
     q.answer = eval(run);
+}
+
+var num = 10;
+
+for(var i = 10 ; i-- > 0; ) {
+    var idx = Math.round(Math.random() * pool.length);
+    questions.push(pool[idx]);
+    pool.splice(idx, 1);
 }
